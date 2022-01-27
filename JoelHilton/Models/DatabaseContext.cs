@@ -1,10 +1,15 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore;
+
 namespace JoelHilton.Models
 {
-    public class DatabaseContext
+    public class DatabaseContext : DbContext
     {
-        public DatabaseContext()
+        public DatabaseContext (DbContextOptions<DatabaseContext> options) : base (options)
         {
+
         }
+
+        public DbSet<AddMovieModel> responses { get; set; }
     }
 }

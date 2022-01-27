@@ -23,10 +23,23 @@ namespace JoelHilton.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult MyPodcasts()
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult AddMovie()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddMovie(AddMovieModel movie)
+        {
+            return View("Confirmation", movie);
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
